@@ -7,7 +7,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="home-page">
       {/* Hero Section */}
-      <section className="hero" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${heroImage})` }}>
+      <section className="hero" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url(${heroImage})` }}>
         <div className="hero-content">
           <h1>Welcome to Tom Nook's Marketplace</h1>
           <p>Your one-stop shop for all your island needs!</p>
