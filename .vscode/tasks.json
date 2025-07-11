@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start React App",
+			"type": "shell",
+			"command": "cd /Users/justinq/Documents/GitHub/tom-nooks-marketplace && npm start",
+			"group": "none",
+			"isBackground": true,
+			"problemMatcher": [
+				"$tsc-watch"
+			]
+		}
+	]
+}

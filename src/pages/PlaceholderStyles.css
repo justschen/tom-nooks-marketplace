@@ -1,0 +1,38 @@
+.placeholder-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  background-color: #f9f6e7;
+  border-radius: 8px;
+  margin: 30px 0;
+}
+
+.placeholder-message {
+  text-align: center;
+  padding: 40px;
+  max-width: 500px;
+}
+
+.placeholder-message img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.nook-logo {
+  width: 80px !important;
+  height: auto !important;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.placeholder-message h2 {
+  color: #513f2d;
+  margin-bottom: 15px;
+}
+
+.placeholder-message p {
+  color: #7cc9c3;
+  font-size: 1.2rem;
+}
