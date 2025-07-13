@@ -1,0 +1,245 @@
+/* TurnipPricesPage.css */
+
+.turnip-prices-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.turnip-icon {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.turnip-prices-page h1 {
+  color: #2c5530;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.turnip-prices-page > p {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+/* Current Prices Section */
+.current-prices {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.current-prices h2 {
+  color: #2c5530;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.price-display {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.price-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  min-width: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-2px);
+}
+
+.price-card h3 {
+  margin: 0 0 15px 0;
+  color: #495057;
+  font-size: 1.2rem;
+}
+
+.price {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #2c5530;
+  margin: 0;
+}
+
+.current-am {
+  border-left: 4px solid #4CAF50;
+}
+
+.current-pm {
+  border-left: 4px solid #3F51B5;
+}
+
+/* Weekly Graph Section */
+.weekly-graph {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.weekly-graph h2 {
+  color: #2c5530;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.graph-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Chart styles */
+.recharts-wrapper {
+  margin: 0 auto 30px;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #e0e0e0;
+}
+
+.recharts-tooltip-wrapper {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: none !important;
+  outline: none !important;
+}
+
+.recharts-tooltip-item-list {
+  padding: 8px;
+}
+
+.recharts-default-tooltip {
+  background-color: white !important;
+  border-radius: 8px !important;
+  border: 1px solid #ececec !important;
+  padding: 10px 14px !important;
+}
+
+/* Price Table */
+.price-table {
+  overflow-x: auto;
+  margin-top: 30px;
+}
+
+.price-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.price-table th, 
+.price-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.price-table th {
+  background-color: #2c5530;
+  color: white;
+  font-weight: bold;
+}
+
+.price-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.price-table tr:hover {
+  background-color: #e6f3ff;
+}
+
+/* Tips Section */
+.tips-section {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tips-section h2 {
+  color: #2c5530;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.tip {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tip h3 {
+  color: #2c5530;
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+}
+
+.tip p {
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .turnip-prices-page {
+    padding: 15px;
+  }
+  
+  .turnip-prices-page h1 {
+    font-size: 2rem;
+  }
+  
+  .current-prices, .weekly-graph, .tips-section {
+    padding: 20px;
+  }
+  
+  .price-display {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .price-card {
+    min-width: 250px;
+  }
+  
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .price-table th, 
+  .price-table td {
+    padding: 8px;
+  }
+}
