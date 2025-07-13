@@ -1,8 +1,6 @@
 import React from 'react';
 import { TurnipPrice } from '../types';
 import './TurnipPricesPage.css';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import turnipIcon from '../images/Turnips_NH_Inv_Icon.png';
 
 const TurnipPricesPage: React.FC = () => {
   // Mock data for weekly turnip prices (AM and PM)
@@ -20,16 +18,9 @@ const TurnipPricesPage: React.FC = () => {
   const currentDay = 'Thursday';
   const currentPrices = weeklyPrices.find(p => p.day === currentDay) || weeklyPrices[3];
 
-  // Format data for the chart
-  const chartData = weeklyPrices.map(price => ({
-    day: price.day,
-    'Morning (AM)': price.am,
-    'Evening (PM)': price.day === 'Sunday' ? null : price.pm
-  }));
-
   return (
     <div className="turnip-prices-page">
-      <h1><img src={turnipIcon} alt="Turnip" className="turnip-icon" /> Turnip Prices</h1>
+      <h1>🥕 Turnip Prices</h1>
       <p>Track turnip prices throughout the week to maximize your profits!</p>
       
       {/* Current Prices Section */}
@@ -51,59 +42,28 @@ const TurnipPricesPage: React.FC = () => {
       <div className="weekly-graph">
         <h2>Weekly Price Trends</h2>
         <div className="graph-container">
-          <ResponsiveContainer width="100%" height={400}>
-            <LineChart
-              data={chartData}
-              margin={{
-                top: 20,
-                right: 20,
-                left: 20,
-                bottom: 20,
-              }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="day" />
-              <YAxis domain={['dataMin - 10', 'dataMax + 10']} />
-              <Tooltip formatter={(value) => [`${value} Bells`, undefined]} />
-              <Legend />
-              <Line 
-                type="monotone" 
-                dataKey="Morning (AM)" 
-                stroke="#4CAF50" 
-                strokeWidth={2} 
-                activeDot={{ r: 8 }} 
-                dot={{ strokeWidth: 2, fill: "#4CAF50", stroke: "#2C5530" }}
-              />
-              <Line 
-                type="monotone" 
-                dataKey="Evening (PM)" 
-                stroke="#3F51B5" 
-                strokeWidth={2} 
-                activeDot={{ r: 8 }} 
-                dot={{ strokeWidth: 2, fill: "#3F51B5", stroke: "#303F9F" }}
-                connectNulls={true}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-          <div className="price-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Day</th>
-                  <th>Morning (AM)</th>
-                  <th>Evening (PM)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {weeklyPrices.map((price) => (
-                  <tr key={price.day}>
-                    <td>{price.day}</td>
-                    <td>{price.am} Bells</td>
-                    <td>{price.day === 'Sunday' ? 'N/A' : `${price.pm} Bells`}</td>
+          <div className="placeholder-chart">
+            <p>Weekly turnip price chart will appear here once charts library is loaded.</p>
+            <div className="price-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Day</th>
+                    <th>Morning (AM)</th>
+                    <th>Evening (PM)</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {weeklyPrices.map((price) => (
+                    <tr key={price.day}>
+                      <td>{price.day}</td>
+                      <td>{price.am} Bells</td>
+                      <td>{price.day === 'Sunday' ? 'N/A' : `${price.pm} Bells`}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

@@ -6,21 +6,11 @@
   padding: 20px;
 }
 
-.turnip-icon {
-  width: 40px;
-  height: 40px;
-  vertical-align: middle;
-  margin-right: 10px;
-}
-
 .turnip-prices-page h1 {
   color: #2c5530;
   text-align: center;
   margin-bottom: 10px;
   font-size: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .turnip-prices-page > p {
@@ -81,11 +71,11 @@
 }
 
 .current-am {
-  border-left: 4px solid #4CAF50;
+  border-left: 4px solid #ffd700;
 }
 
 .current-pm {
-  border-left: 4px solid #3F51B5;
+  border-left: 4px solid #ff6b35;
 }
 
 /* Weekly Graph Section */
@@ -109,39 +99,22 @@
   margin: 0 auto;
 }
 
-/* Chart styles */
-.recharts-wrapper {
-  margin: 0 auto 30px;
-}
-
-.recharts-cartesian-grid-horizontal line,
-.recharts-cartesian-grid-vertical line {
-  stroke: #e0e0e0;
-}
-
-.recharts-tooltip-wrapper {
-  background: white;
+/* Placeholder Chart and Table */
+.placeholder-chart {
+  background-color: #f9f9f9;
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: none !important;
-  outline: none !important;
+  text-align: center;
 }
 
-.recharts-tooltip-item-list {
-  padding: 8px;
+.placeholder-chart p {
+  color: #666;
+  margin-bottom: 20px;
+  font-style: italic;
 }
 
-.recharts-default-tooltip {
-  background-color: white !important;
-  border-radius: 8px !important;
-  border: 1px solid #ececec !important;
-  padding: 10px 14px !important;
-}
-
-/* Price Table */
 .price-table {
   overflow-x: auto;
-  margin-top: 30px;
 }
 
 .price-table table {
