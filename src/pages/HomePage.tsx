@@ -2,6 +2,10 @@ import React from 'react';
 import './HomePage.css';
 import { Link } from 'react-router-dom';
 import heroImage from '../images/hero1.jpg'; // Import the hero image
+// Import featured item images
+import goldenAxeImage from '../images/Golden_Axe_NH_Icon.png';
+import nookLogoImage from '../images/nook-logo.png';
+import netImage from '../images/Net_(Red)_NH_Icon.png';
 
 const HomePage: React.FC = () => {
   return (
@@ -45,19 +49,25 @@ const HomePage: React.FC = () => {
         <p>Check out our most popular products this season!</p>
         <div className="featured-grid">
           <div className="featured-item">
-            <div className="featured-image placeholder"></div>
+            <div className="featured-image">
+              <img src={goldenAxeImage} alt="Premium Tools" />
+            </div>
             <h3>Premium Tools</h3>
             <p>Built to last for all your island tasks</p>
           </div>
           
           <div className="featured-item">
-            <div className="featured-image placeholder"></div>
+            <div className="featured-image">
+              <img src={nookLogoImage} alt="Stylish Furniture" />
+            </div>
             <h3>Stylish Furniture</h3>
             <p>Upgrade your home in style</p>
           </div>
           
           <div className="featured-item">
-            <div className="featured-image placeholder"></div>
+            <div className="featured-image">
+              <img src={netImage} alt="Seasonal Clothing" />
+            </div>
             <h3>Seasonal Clothing</h3>
             <p>Look your best in any weather</p>
           </div>

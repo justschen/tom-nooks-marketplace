@@ -241,6 +241,16 @@
 .featured-image {
   height: 200px;
   background-color: #e0dbc9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.featured-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .featured-item h3 {
