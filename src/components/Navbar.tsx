@@ -40,6 +40,9 @@ const Navbar: React.FC = () => {
           <li className={location.pathname === '/turnip-prices' ? 'active' : ''}>
             <Link to="/turnip-prices">Turnip Prices</Link>
           </li>
+          <li className={location.pathname === '/team' ? 'active' : ''}>
+            <Link to="/team">Team</Link>
+          </li>
           <li className="navbar-cart">
             <Link to="/cart" className="cart-icon">🛒 Cart (0)</Link>
           </li>
