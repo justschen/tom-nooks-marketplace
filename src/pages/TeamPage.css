@@ -1,0 +1,144 @@
+.team-page {
+  padding: 0;
+}
+
+.team-hero {
+  background: linear-gradient(135deg, #7cc9c3 0%, #9bd8d3 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 20px 60px;
+  margin-bottom: 50px;
+}
+
+.team-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.team-hero p {
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+}
+
+.team-member {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #f0f8f7;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.member-emoji {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.team-member h3 {
+  color: #513f2d;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.team-member h4 {
+  color: #7cc9c3;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.team-member p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.team-mission {
+  background-color: #f9f6e7;
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.team-mission h2 {
+  color: #513f2d;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.team-mission p {
+  color: #666;
+  font-size: 1.3rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .team-hero {
+    padding: 60px 20px 40px;
+  }
+  
+  .team-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .team-hero p {
+    font-size: 1.1rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
+  
+  .team-member {
+    padding: 25px;
+  }
+  
+  .member-emoji {
+    font-size: 3rem;
+  }
+  
+  .team-member h3 {
+    font-size: 1.5rem;
+  }
+  
+  .team-mission {
+    padding: 40px 15px;
+  }
+  
+  .team-mission h2 {
+    font-size: 2rem;
+  }
+  
+  .team-mission p {
+    font-size: 1.1rem;
+  }
+}
