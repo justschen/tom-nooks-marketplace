@@ -11,6 +11,7 @@ import AllProductsPage from './pages/AllProductsPage';
 import ToolsPage from './pages/ToolsPage';
 import FurniturePage from './pages/FurniturePage';
 import ClothingPage from './pages/ClothingPage';
+import TurnipPricesPage from './pages/TurnipPricesPage';
 
 // Import CSS for placeholders
 import './pages/PlaceholderStyles.css';
@@ -63,6 +64,11 @@ const App: React.FC = () => {
           <Route path="/clothing" element={
             <main className="content-container">
               <ClothingPage />
+            </main>
+          } />
+          <Route path="/turnip-prices" element={
+            <main className="content-container">
+              <TurnipPricesPage />
             </main>
           } />
         </Routes>

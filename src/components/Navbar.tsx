@@ -32,6 +32,9 @@ const Navbar: React.FC = () => {
         <li className={location.pathname === '/clothing' ? 'active' : ''}>
           <Link to="/clothing">Clothing</Link>
         </li>
+        <li className={location.pathname === '/turnip-prices' ? 'active' : ''}>
+          <Link to="/turnip-prices">Turnip Prices</Link>
+        </li>
       </ul>
       <div className="navbar-cart">
         <Link to="/cart" className="cart-icon">🛒 Cart (0)</Link>
