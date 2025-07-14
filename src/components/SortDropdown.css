@@ -1,9 +1,6 @@
 .sort-dropdown-container {
-  margin-bottom: 20px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding: 0 10px;
   position: relative;
   font-family: 'Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

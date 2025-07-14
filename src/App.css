@@ -36,14 +36,34 @@ header p {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-bottom: 50px;
+  padding: 0 30px; /* Add horizontal padding */
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .content-container {
   min-height: 70vh;
-  padding: 20px 0;
+  padding-top: 20px;
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);

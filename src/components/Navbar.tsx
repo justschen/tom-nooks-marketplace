@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import nookLogo from '../images/nook-logo.png';
 
 const Navbar: React.FC = () => {
   const location = useLocation();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLLIElement>(null);
   
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -21,21 +37,38 @@ const Navbar: React.FC = () => {
           <li className={location.pathname === '/' ? 'active' : ''}>
             <Link to="/">Home</Link>
           </li>
-          <li className={location.pathname === '/products' ? 'active' : ''}>
-            <Link to="/products">All Products</Link>
+          <li 
+            ref={dropdownRef}
+            className={`
+              ${['/products', '/furniture', '/clothing', '/tools', '/gardening'].includes(location.pathname) 
+                ? 'active' : ''}
+              dropdown
+              ${dropdownOpen ? 'dropdown-active' : ''}
+            `}
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
+          >
+            <Link to="/products">
+              All Products
+              <span className="dropdown-icon">▼</span>
+            </Link>
+            <div className={`dropdown-content ${dropdownOpen ? 'show' : ''}`}>
+              <Link to="/furniture" className={location.pathname === '/furniture' ? 'active' : ''}>
+                Furniture
+              </Link>
+              <Link to="/clothing" className={location.pathname === '/clothing' ? 'active' : ''}>
+                Clothing
+              </Link>
+              <Link to="/tools" className={location.pathname === '/tools' ? 'active' : ''}>
+                Tools
+              </Link>
+              <Link to="/gardening" className={location.pathname === '/gardening' ? 'active' : ''}>
+                Gardening
+              </Link>
+            </div>
           </li>
-          {/* Furniture item commented out
-          <li className={location.pathname === '/furniture' ? 'active' : ''}>
-            <Link to="/furniture">Furniture</Link>
-          </li>
-          */}
-          {/* Tools item commented out
-          <li className={location.pathname === '/tools' ? 'active' : ''}>
-            <Link to="/tools">Tools</Link>
-          </li>
-          */}
-          <li className={location.pathname === '/clothing' ? 'active' : ''}>
-            <Link to="/clothing">Clothing</Link>
+          <li className={location.pathname === '/nook-stop' ? 'active' : ''}>
+            <Link to="/nook-stop">Nook Stop</Link>
           </li>
           <li className={location.pathname === '/turnip-prices' ? 'active' : ''}>
             <Link to="/turnip-prices">Turnip Prices</Link>

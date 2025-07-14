@@ -1,0 +1,413 @@
+.filter-dropdown-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-family: 'Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.filter-label {
+  margin-right: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+.custom-dropdown {
+  position: relative;
+  min-width: 180px;
+  z-index: 11;
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.dropdown-header:hover, .dropdown-header.active {
+  background-color: #f9f9f9;
+  border-color: #78b370;
+}
+
+.dropdown-header.active {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.selected-option {
+  font-weight: 500;
+  color: #513f2d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.dropdown-arrow {
+  font-size: 10px;
+  color: #78b370;
+  transition: transform 0.2s ease;
+  margin-left: 8px;
+}
+
+.dropdown-arrow.up {
+  transform: rotate(180deg);
+}
+
+.filter-dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  min-width: 340px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 20;
+  padding: 0px 16px 16px 16px;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.filter-section:last-child {
+  border-bottom: none;
+}
+
+.filter-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #513f2d;
+  font-weight: 600;
+}
+
+.category-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.filter-option {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: #555;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid grey;
+}
+
+.filter-option:hover {
+  background-color: #f3f8f2;
+}
+
+.filter-option.selected {
+  background-color: #e5f1e3;
+  color: #513f2d;
+  font-weight: 500;
+}
+
+.price-range-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.slider-with-label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 5px;
+}
+
+.slider-value {
+  min-width: 90px;
+  text-align: right;
+  font-size: 14px;
+  color: #513f2d;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Special styling for range slider values */
+.range-values {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.range-values .min-value,
+.range-values .max-value {
+  min-width: auto;
+  text-align: center;
+}
+
+.price-range-summary {
+  margin-top: 5px;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #513f2d;
+  border-top: 1px dashed #e0e0e0;
+}
+
+.min-value {
+  color: #78b370;
+}
+
+.max-value {
+  color: #1d9bb5;
+}
+
+.price-range-filter h5 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  color: #513f2d;
+  font-weight: 600;
+}
+
+/* Range slider container styles */
+.dual-range-slider {
+  position: relative;
+  height: 30px;
+  padding-top: 10px;
+}
+
+/* Range slider base style */
+.range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: transparent;
+  outline: none;
+  margin: 0;
+  padding: 15px 0; /* Larger padding for better touch target */
+  pointer-events: none; /* Important: This lets clicks go through to the correct thumb */
+}
+
+.range-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  background: #e5e5e5;
+  border-radius: 3px;
+  border: none;
+}
+
+.range-slider::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  background: #e5e5e5;
+  border-radius: 3px;
+  border: none;
+}
+
+/* Make thumbs clickable */
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: auto; /* Re-enable pointer events on thumbs */
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: -8px;
+  position: relative;
+  z-index: 2;
+}
+
+.range-slider::-moz-range-thumb {
+  pointer-events: auto; /* Re-enable pointer events on thumbs */
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+/* Specific styles for min and max thumbs */
+.min-slider::-webkit-slider-thumb {
+  background: #78b370;
+  box-shadow: 0 0 0 1px #78b370, 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 3; /* Higher z-index so it appears above the track */
+}
+
+.min-slider::-moz-range-thumb {
+  background: #78b370;
+  box-shadow: 0 0 0 1px #78b370, 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+
+.max-slider::-webkit-slider-thumb {
+  background: #1d9bb5;
+  box-shadow: 0 0 0 1px #1d9bb5, 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+
+.max-slider::-moz-range-thumb {
+  background: #1d9bb5;
+  box-shadow: 0 0 0 1px #1d9bb5, 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+
+/* Create the colored track between thumbs */
+.range-slider-container {
+  position: relative;
+  padding: 10px 0;
+}
+
+.range-slider-container::before {
+  content: '';
+  position: absolute;
+  top: 25px; /* Adjust to align with the slider track */
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: #e5e5e5;
+  border-radius: 3px;
+  z-index: 1;
+}
+
+/* Colored track between thumbs */
+.range-slider-container::after {
+  content: '';
+  position: absolute;
+  top: 25px;
+  height: 6px;
+  background: linear-gradient(to right, #78b370, #1d9bb5);
+  border-radius: 3px;
+  z-index: 1;
+  /* The position and width will be calculated with JavaScript */
+  left: var(--slider-min-pos, 0%);
+  right: calc(100% - var(--slider-max-pos, 100%));
+}
+
+.range-values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* These styles are now replaced with the single slider styles */
+
+.filter-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.filter-clear-btn,
+.filter-apply-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.filter-clear-btn {
+  background-color: transparent;
+  color: #555;
+  border: 1px solid #ddd;
+}
+
+.filter-clear-btn:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.filter-apply-btn {
+  background-color: #78b370;
+  color: white;
+  font-weight: 500;
+  min-width: 80px;
+}
+
+.filter-apply-btn:hover {
+  background-color: #69a361;
+}
+
+/* Add bells or miles icon to the slider values */
+.slider-value {
+  position: relative;
+  padding-left: 20px;
+}
+
+.slider-value:before {
+  content: '🔔';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  font-size: 14px;
+}
+
+.nook-miles-page .slider-value:before {
+  content: '🎫';
+}
+
+/* Make price range summary icon smaller */
+.price-range-summary strong {
+  position: relative;
+  padding-left: 18px;
+  display: inline-block;
+}
+
+.price-range-summary strong:before {
+  content: '🔔';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  font-size: 12px;
+}
+
+.nook-miles-page .price-range-summary strong:before {
+  content: '🎫';
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+  .filter-dropdown-container {
+    margin-right: 0;
+  }
+  
+  .category-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .price-range-inputs {
+    flex-direction: column;
+  }
+}

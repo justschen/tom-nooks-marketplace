@@ -2,7 +2,7 @@ import React from 'react';
 import { TurnipPrice } from '../types';
 import './TurnipPricesPage.css';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import turnipIcon from '../images/Turnips_NH_Inv_Icon.png';
+import turnipIcon from '../images/gardening/Turnips_NH_Inv_Icon.png';
 
 const TurnipPricesPage: React.FC = () => {
   // Mock data for weekly turnip prices (AM and PM)
@@ -29,11 +29,16 @@ const TurnipPricesPage: React.FC = () => {
 
   return (
     <div className="turnip-prices-page">
-      <h1><img src={turnipIcon} alt="Turnip" className="turnip-icon" /> Turnip Prices</h1>
-      <p>Track turnip prices throughout the week to maximize your profits!</p>
+      {/* Hero Section */}
+      <section className="turnip-hero">
+        <div className="turnip-hero-content">
+          <h1><img src={turnipIcon} alt="Turnip" className="turnip-icon" /> Turnip Prices</h1>
+          <p>Track turnip prices throughout the week to maximize your profits!</p>
+        </div>
+      </section>
       
       {/* Current Prices Section */}
-      <div className="current-prices">
+      <section className="current-prices-container">
         <h2>Today's Prices ({currentDay})</h2>
         <div className="price-display">
           <div className="price-card current-am">
@@ -45,10 +50,10 @@ const TurnipPricesPage: React.FC = () => {
             <div className="price">{currentPrices.pm} Bells</div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Weekly Graph Section */}
-      <div className="weekly-graph">
+      <section className="weekly-graph-container">
         <h2>Weekly Price Trends</h2>
         <div className="graph-container">
           <ResponsiveContainer width="100%" height={400}>
@@ -106,10 +111,10 @@ const TurnipPricesPage: React.FC = () => {
             </table>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Tips Section */}
-      <div className="tips-section">
+      <section className="turnip-tips-container">
         <h2>💡 Trading Tips</h2>
         <div className="tips-grid">
           <div className="tip">
@@ -125,7 +130,7 @@ const TurnipPricesPage: React.FC = () => {
             <p>Check other islands' prices - you might find better deals elsewhere!</p>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

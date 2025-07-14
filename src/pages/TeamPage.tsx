@@ -37,22 +37,30 @@ const TeamPage: React.FC = () => {
 
   return (
     <div className="team-page">
+      {/* Hero Section */}
       <section className="team-hero">
-        <h1>Meet Our Team</h1>
-        <p>The dedicated individuals who make Tom Nook's Marketplace and your island experience exceptional</p>
+        <div className="team-hero-content">
+          <h1>Meet Our Team</h1>
+          <p>The dedicated individuals who make Tom Nook's Marketplace and your island experience exceptional</p>
+        </div>
+      </section>
+      
+      {/* Team Members Section */}
+      <section className="team-members-container">
+        <h2>Our Island Experts</h2>
+        <div className="team-grid">
+          {teamMembers.map((member, index) => (
+            <div key={index} className="team-member">
+              <div className="member-emoji">{member.emoji}</div>
+              <h3>{member.name}</h3>
+              <h4>{member.role}</h4>
+              <p>{member.description}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
-      <section className="team-grid">
-        {teamMembers.map((member, index) => (
-          <div key={index} className="team-member">
-            <div className="member-emoji">{member.emoji}</div>
-            <h3>{member.name}</h3>
-            <h4>{member.role}</h4>
-            <p>{member.description}</p>
-          </div>
-        ))}
-      </section>
-
+      {/* Mission Statement Section */}
       <section className="team-mission">
         <h2>Our Mission</h2>
         <p>
@@ -60,6 +68,30 @@ const TeamPage: React.FC = () => {
           From shopping and development to entertainment and education, our team is committed 
           to helping you create the perfect island paradise.
         </p>
+      </section>
+      
+      {/* Values Section */}
+      <section className="team-values">
+        <h2>Our Values</h2>
+        <div className="values-grid">
+          <div className="value-item">
+            <div className="value-icon">🌱</div>
+            <h3>Sustainability</h3>
+            <p>We're committed to eco-friendly practices that preserve island beauty for future generations.</p>
+          </div>
+          
+          <div className="value-item">
+            <div className="value-icon">🤝</div>
+            <h3>Community</h3>
+            <p>Building strong relationships with residents is at the heart of everything we do.</p>
+          </div>
+          
+          <div className="value-item">
+            <div className="value-icon">💡</div>
+            <h3>Innovation</h3>
+            <p>We're always looking for new ways to improve island living and enhance your experience.</p>
+          </div>
+        </div>
       </section>
     </div>
   );

@@ -3,9 +3,9 @@ import './HomePage.css';
 import { Link } from 'react-router-dom';
 import heroImage from '../images/hero1.jpg'; // Import the hero image
 // Import featured item images
-import goldenAxeImage from '../images/Golden_Axe_NH_Icon.png';
+import goldenAxeImage from '../images/tools/Golden_Axe_NH_Icon.png';
 import nookLogoImage from '../images/nook-logo.png';
-import netImage from '../images/Net_(Red)_NH_Icon.png';
+import netImage from '../images/tools/Net_(Red)_NH_Icon.png';
 
 const HomePage: React.FC = () => {
   return (
