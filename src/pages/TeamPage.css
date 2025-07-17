@@ -125,6 +125,27 @@
   line-height: 1;
 }
 
+.member-image {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.member-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #7cc9c3;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(124, 201, 195, 0.3);
+}
+
 .team-member h3 {
   color: #513f2d;
   font-size: 1.8rem;
@@ -292,6 +313,11 @@
   .member-emoji,
   .value-icon {
     font-size: 3rem;
+  }
+  
+  .member-image img {
+    width: 100px;
+    height: 100px;
   }
   
   .team-member h3,
