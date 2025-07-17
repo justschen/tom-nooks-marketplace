@@ -47,9 +47,14 @@ const ClothingPage: React.FC<ClothingPageProps> = ({ products }) => {
     return [...filteredProducts].sort((a, b) => {
       if (sortOption === 'aToZ') {
         return a.name.localeCompare(b.name);
-      } else {
+      } else if (sortOption === 'zToA') {
         return b.name.localeCompare(a.name);
+      } else if (sortOption === 'priceLowToHigh') {
+        return a.price - b.price;
+      } else if (sortOption === 'priceHighToLow') {
+        return b.price - a.price;
       }
+      return 0;
     });
   }, [filteredProducts, sortOption]);
   
