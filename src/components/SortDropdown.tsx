@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './SortDropdown.css';
 
-export type SortOption = 'aToZ' | 'zToA';
+export type SortOption = 'aToZ' | 'zToA' | 'priceLowToHigh' | 'priceHighToLow';
 
 interface SortDropdownProps {
   currentSort: SortOption;
@@ -14,7 +14,9 @@ const SortDropdown: React.FC<SortDropdownProps> = ({ currentSort, onSortChange }
   
   const options = [
     { value: 'aToZ', label: 'Name (A to Z)' },
-    { value: 'zToA', label: 'Name (Z to A)' }
+    { value: 'zToA', label: 'Name (Z to A)' },
+    { value: 'priceLowToHigh', label: 'Price (Low to High)' },
+    { value: 'priceHighToLow', label: 'Price (High to Low)' }
   ];
 
   const currentLabel = options.find(option => option.value === currentSort)?.label || 'Sort by';
