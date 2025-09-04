@@ -119,10 +119,23 @@
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.member-emoji {
-  font-size: 4rem;
+.member-image {
   margin-bottom: 20px;
   line-height: 1;
+}
+
+.member-image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #7cc9c3;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.team-member:hover .member-image img {
+  transform: scale(1.1);
+  border-color: #513f2d;
 }
 
 .team-member h3 {
@@ -289,9 +302,10 @@
     padding: 25px;
   }
   
-  .member-emoji,
-  .value-icon {
-    font-size: 3rem;
+  .member-image img,
+  .member-image img {
+    width: 60px;
+    height: 60px;
   }
   
   .team-member h3,
