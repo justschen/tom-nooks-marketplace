@@ -8,6 +8,11 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
+    "types": [
+      "node",
+      "react",
+      "react-dom"
+    ],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
