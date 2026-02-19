@@ -15,6 +15,7 @@ import GardeningPage from './pages/GardeningPage';
 import NookMilesPage from './pages/NookMilesPage';
 import TurnipPricesPage from './pages/TurnipPricesPage';
 import TeamPage from './pages/TeamPage';
+import ContactPage from './pages/ContactPage';
 
 // Import CSS for placeholders
 import './pages/PlaceholderStyles.css';
@@ -172,6 +173,11 @@ const App: React.FC = () => {
           <Route path="/team" element={
             <main className="content-container team-content">
               <TeamPage />
+            </main>
+          } />
+          <Route path="/contact" element={
+            <main className="content-container contact-content">
+              <ContactPage />
             </main>
           } />
         </Routes>
