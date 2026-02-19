@@ -3,6 +3,24 @@
   max-width: 100%;
 }
 
+/* Layout wrapper for main content and chatbot */
+.home-content-wrapper {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.home-main-content {
+  flex: 1;
+  min-width: 0; /* Prevent flex item from overflowing */
+}
+
+.home-chatbot-section {
+  position: sticky;
+  top: 20px;
+  z-index: 10;
+}
+
 /* Override content-container background for home page */
 .home-content {
   background-color: transparent !important;
@@ -354,6 +372,17 @@
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+  .home-content-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .home-chatbot-section {
+    position: relative;
+    top: auto;
+    order: -1; /* Put chatbot at the top on mobile */
+  }
+  
   .hero {
     height: 400px;
   }
@@ -374,6 +403,10 @@
 }
 
 @media (max-width: 480px) {
+  .home-content-wrapper {
+    gap: 15px;
+  }
+  
   .hero {
     height: 350px;
   }

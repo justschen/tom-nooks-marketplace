@@ -11,3 +11,10 @@ export interface TurnipPrice {
   am: number;
   pm: number;
 }
+
+export interface ChatMessage {
+  id: number;
+  text: string;
+  sender: 'user' | 'bot';
+  timestamp: Date;
+}
