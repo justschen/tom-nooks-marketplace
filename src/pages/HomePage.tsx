@@ -6,6 +6,7 @@ import heroImage from '../images/hero1.jpg'; // Import the hero image
 import goldenAxeImage from '../images/tools/Golden_Axe_NH_Icon.png';
 import nookLogoImage from '../images/nook-logo.png';
 import netImage from '../images/tools/Net_(Red)_NH_Icon.png';
+import Chatbot from '../components/Chatbot';
 
 const HomePage: React.FC = () => {
   return (
@@ -94,6 +95,9 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+      
+      {/* Tom Nook Chatbot */}
+      <Chatbot />
     </div>
   );
 };
