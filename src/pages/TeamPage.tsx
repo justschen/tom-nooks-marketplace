@@ -7,31 +7,31 @@ const TeamPage: React.FC = () => {
       name: "Tom Nook",
       role: "Real Estate Mogul / Town Developer",
       description: "The visionary behind Nook Inc., Tom Nook helps residents develop their islands and achieve their dreams through strategic real estate development.",
-      emoji: "🦝"
+      image: require('../images/team/tom-nook.png')
     },
     {
       name: "Timmy and Tommy",
       role: "Shop Keepers", 
       description: "The dynamic duo who keep Nook's Cranny running smoothly. They're always ready to help with your shopping needs and inventory management.",
-      emoji: "🛍️"
+      image: require('../images/team/timmy-tommy.png')
     },
     {
       name: "Isabelle",
       role: "Town Secretary / Island Assistant",
       description: "Your dedicated island assistant who helps with daily announcements, island ratings, and keeping everything organized and running efficiently.",
-      emoji: "🐕"
+      image: require('../images/team/isabelle.png')
     },
     {
       name: "K.K. Slider",
       role: "Emotional Support Musician",
       description: "The traveling musician who brings joy and music to our community. His performances lift spirits and create memorable island experiences.",
-      emoji: "🎸"
+      image: require('../images/team/kk-slider.png')
     },
     {
       name: "Blathers",
       role: "Historian and Museum Curator",
       description: "Our knowledgeable museum curator who preserves island history and educates the community about fossils, art, and natural specimens.",
-      emoji: "🦉"
+      image: require('../images/team/blathers.png')
     }
   ];
 
@@ -51,7 +51,9 @@ const TeamPage: React.FC = () => {
         <div className="team-grid">
           {teamMembers.map((member, index) => (
             <div key={index} className="team-member">
-              <div className="member-emoji">{member.emoji}</div>
+              <div className="member-image">
+                <img src={member.image} alt={member.name} />
+              </div>
               <h3>{member.name}</h3>
               <h4>{member.role}</h4>
               <p>{member.description}</p>
